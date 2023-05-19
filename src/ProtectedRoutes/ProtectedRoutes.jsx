@@ -7,7 +7,8 @@ const ProtectedRoutes = ({ children }) => {
 
   if (user && token) {
     if (user.isBanned){
-      logout()
+      logout();
+      return;
     } else {
       if (user.role === "admin") {
         return <Navigate to="/admin" />;
